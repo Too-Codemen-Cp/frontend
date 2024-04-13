@@ -72,10 +72,16 @@ export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 					</div>
 
 					<div className={s.result__flex}>
-						<img
-							src={fileURL}
-							className={s.result__flex__img}
-						/>
+						<a
+							href={fileURL}
+							target='blank'
+						>
+							<div>Открыть</div>
+							<img
+								src={fileURL}
+								className={s.result__flex__img}
+							/>
+						</a>
 					</div>
 
 					<div className={s.title} id='similar'>
