@@ -29,7 +29,12 @@ export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 					<div className={s.result}>
 						<>С точностью </>
 						{(maxPrediction.confidence * 100).toFixed(2)}% это -{' '}
-						{dataNames[maxPrediction.class]}
+						<br />
+						<div>{dataNames[maxPrediction.class]}</div>
+
+						<a href='#similar' className={s.result__similar}>
+							Посмотреть похожие
+						</a>
 					</div>
 
 					{fileURL && (
@@ -45,14 +50,16 @@ export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 						</div>
 					)}
 
-					<div className={s.title}>Похожие: </div>
+					<div className={s.title} id='similar'>Похожие: </div>
 
 					<div className={s.result__flex}>
 						{appendToArray().map((elem, key) => (
 							<a
 								href={`http://127.0.0.1:8000/${maxPrediction.class}/${elem}.jpg`}
+								key={key}
 								target='blank'
 							>
+								<div>Открыть</div>
 								<img
 									src={`http://127.0.0.1:8000/${maxPrediction.class}/${elem}.jpg`}
 									className={s.result__flex__img}

@@ -6,6 +6,17 @@
 .result {
     font-weight: bold;
 
+    div {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 48px;
+    }
+
+    &__similar {
+        color: white;
+    }
+
     &__info {
         text-align: center;
     }
@@ -19,6 +30,33 @@
             height: 100px;
             margin-right: 20px;
             margin-bottom: 20px;
+        }
+
+
+        a {
+            position: relative;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                border-radius: 20px;
+                top: 10px;
+                width: 100px;
+                height: 100px;
+                background-color: black;
+                color: white;
+                opacity: 0;
+                transition: all .3s ease-in-out;
+            }
+
+
+            &:hover {
+                div {
+                    opacity: .5
+                }
+            }
         }
     }
 }
