@@ -6,7 +6,7 @@ import s from './styles.module.scss'
 export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 	let maxPrediction = null
 	if (data && fileBlob.type.includes('image')) {
-		maxPrediction = data.predictions[0]
+		maxPrediction = data[0].result.predictions[0]
 	}
 
 	return (
