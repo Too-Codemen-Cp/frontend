@@ -50,7 +50,11 @@ export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 								</div>
 
 								<p className={s.result__info__right__text}>
-									{classDesc[maxPrediction.class][getRandomInt(0, 2)]}
+									{
+										classDesc[maxPrediction.class][
+											getRandomInt(0, 2)
+										]
+									}
 								</p>
 
 								<a
@@ -62,6 +66,17 @@ export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 							</div>
 						</div>
 					)}
+
+					<div className={s.title}>
+						Найдена совершенно идентичная фотография:
+					</div>
+
+					<div className={s.result__flex}>
+						<img
+							src={fileURL}
+							className={s.result__flex__img}
+						/>
+					</div>
 
 					<div className={s.title} id='similar'>
 						Похожие:{' '}
