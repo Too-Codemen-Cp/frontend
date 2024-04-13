@@ -1,8 +1,8 @@
 import { CircularProgress } from '@mui/material'
 import React from 'react'
-import { dataNames, images } from '../data/data'
+import { dataNames } from '../data/data'
 import s from './styles.module.scss'
-import { getRandomInt } from '../utils/helpers'
+import { appendToArray } from '../utils/helpers'
 
 export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 	let maxPrediction = null
@@ -48,13 +48,16 @@ export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 					<div className={s.title}>Похожие: </div>
 
 					<div className={s.result__flex}>
-						{images.map((elem, key) => (
-							<img
-								src={`http://127.0.0.1:8000/${
-									maxPrediction.class
-								}/${getRandomInt(1, 21)}.jpg`}
-								className={s.result__flex__img}
-							/>
+						{appendToArray().map((elem, key) => (
+							<a
+								href={`http://127.0.0.1:8000/${maxPrediction.class}/${elem}.jpg`}
+								target='blank'
+							>
+								<img
+									src={`http://127.0.0.1:8000/${maxPrediction.class}/${elem}.jpg`}
+									className={s.result__flex__img}
+								/>
+							</a>
 						))}
 					</div>
 				</div>
