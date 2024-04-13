@@ -50,7 +50,7 @@ export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 								</div>
 
 								<p className={s.result__info__right__text}>
-									{classDesc[maxPrediction.class][getRandomInt(0, 3)]}
+									{classDesc[maxPrediction.class][getRandomInt(0, 2)]}
 								</p>
 
 								<a
