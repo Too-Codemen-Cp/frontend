@@ -6,9 +6,14 @@ export function getRandomInt(min, max) {
 
 export const appendToArray = () => {
     let array = []
+    let i = 0
 
-    for (var i = 0; i < 10; i++) {
-        array.push(getRandomInt(1,21))
+    while (i < 10) {
+        let number = getRandomInt(1,21);
+        if (!array.includes(number)) {
+            array.push(number)
+            i += 1
+        }
     }
 
     return array
