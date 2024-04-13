@@ -5,6 +5,10 @@
 
 .result {
     font-weight: bold;
+
+    &__img {
+        text-align: center;
+    }
 }
 
 img {

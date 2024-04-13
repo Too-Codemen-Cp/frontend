@@ -30,23 +30,21 @@ export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 						{(maxPrediction.confidence * 100).toFixed(2)}% это -{' '}
 						{dataNames[maxPrediction.class]}
 					</div>
+
+					{fileURL && (
+						<div className={s.result__img}>
+							<img
+								src={`http://127.0.0.1:8000/new_${fileBlob.name.replace(
+									' ',
+									'_'
+								)}`}
+								alt='Selected'
+								style={{ maxWidth: '60%', textAlign: 'center' }}
+							/>
+						</div>
+					)}
 				</div>
 			) : null}
-			{fileURL && (
-				<>
-					<img
-						src={fileURL}
-						alt='Selected'
-						style={{ maxWidth: '60%', textAlign: 'center' }}
-					/>
-
-					{/* <img
-						src={fileBlob.name}
-						alt='Selected'
-						style={{ maxWidth: '60%', textAlign: 'center' }}
-					/> */}
-				</>
-			)}
 		</div>
 	)
 }
