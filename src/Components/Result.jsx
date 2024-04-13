@@ -39,6 +39,12 @@ export const Result = ({ isError, isFetching, data, fileURL, fileBlob }) => {
 						alt='Selected'
 						style={{ maxWidth: '60%', textAlign: 'center' }}
 					/>
+
+					{/* <img
+						src={fileBlob.name}
+						alt='Selected'
+						style={{ maxWidth: '60%', textAlign: 'center' }}
+					/> */}
 				</>
 			)}
 		</div>
