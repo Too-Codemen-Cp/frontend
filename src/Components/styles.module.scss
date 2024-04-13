@@ -6,8 +6,20 @@
 .result {
     font-weight: bold;
 
-    &__img {
+    &__info {
         text-align: center;
+    }
+
+    &__flex {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
     }
 }
 
