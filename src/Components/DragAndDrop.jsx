@@ -36,7 +36,7 @@ export const DragAndDrop = ({ children, setFile }) => {
 				display: 'flex',
 				flexDirection: 'column'
 			}}
-			minHeight='calc(100vh - 40px)'
+			minHeight='calc(100vh - 100px)'
 			display='flex'
 			justifyContent='center'
 			alignItems='center'

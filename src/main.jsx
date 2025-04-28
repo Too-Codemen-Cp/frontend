@@ -9,6 +9,8 @@ import { Provider } from 'react-redux'
 import { store } from './store/store.js'
 import { DarkTheme } from './Components/DarkTheme.jsx'
 
+import './index.scss'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<Provider store={store}>

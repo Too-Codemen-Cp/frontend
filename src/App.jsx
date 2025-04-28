@@ -7,6 +7,8 @@ import { useState } from 'react'
 import { usePostFileMutation } from './api/file'
 import { Result } from './Components/Result'
 
+import './App.scss'
+
 function App() {
 	const [file, setFile] = useState({})
 	const [postFile, { isLoading, data, isError }] = usePostFileMutation()
@@ -20,6 +22,7 @@ function App() {
 
 	return (
 		<div>
+			<h1 className='title'>Поиск музейных предметов</h1>
 			<DragAndDrop setFile={setFile}>
 				<Stack
 					component='form'
